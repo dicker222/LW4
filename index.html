@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>АІС — Українські твори</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>🎨 Українські твори мистецтва</h1>
+      <p>Проста АІС — Варіант 2: Творчість</p>
+    </header>
+
+    <main>
+      <section class="form-section">
+        <h2 id="form-title">Додати твір</h2>
+
+        <form id="artwork-form">
+          <input type="hidden" id="field-id" />
+
+          <div class="form-row">
+            <label for="field-title">Назва твору *</label>
+            <input
+              id="field-title"
+              type="text"
+              placeholder="Наприклад: Катерина"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="field-author">Автор *</label>
+            <input
+              id="field-author"
+              type="text"
+              placeholder="Наприклад: Тарас Шевченко"
+              required
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="field-year">Рік створення</label>
+            <input
+              id="field-year"
+              type="number"
+              placeholder="Наприклад: 1842"
+              min="0"
+              max="2099"
+            />
+          </div>
+
+          <div class="form-row">
+            <label for="field-genre">Жанр</label>
+            <select id="field-genre">
+              <option value="живопис">Живопис</option>
+              <option value="скульптура">Скульптура</option>
+              <option value="графіка">Графіка</option>
+              <option value="поезія">Поезія</option>
+              <option value="музика">Музика</option>
+              <option value="інше">Інше</option>
+            </select>
+          </div>
+
+          <div class="form-row">
+            <label for="field-desc">Опис</label>
+            <textarea id="field-desc" placeholder="Короткий опис..."></textarea>
+          </div>
+
+          <div class="form-buttons">
+            <button type="submit" id="btn-save">💾 Зберегти</button>
+            <button type="button" id="btn-cancel">✕ Скасувати</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="list-section">
+        <h2>Список творів</h2>
+
+        <div class="list-controls">
+          <input id="search-input" type="text" placeholder="🔍 Пошук..." />
+          <span id="count-label"></span>
+        </div>
+
+        <div id="alert-box" class="alert hidden"></div>
+
+        <table id="artworks-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Назва</th>
+              <th>Автор</th>
+              <th>Рік</th>
+              <th>Жанр</th>
+              <th>Дії</th>
+            </tr>
+          </thead>
+          <tbody id="artworks-tbody"></tbody>
+        </table>
+
+        <p id="empty-message" class="empty-message hidden">
+          Записів не знайдено
+        </p>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
